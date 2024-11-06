@@ -1,34 +1,11 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useRef } from "react";
-import { Todo } from "./hooks/useTodos";
-import axios from "axios";
+import useAddTodo from "./hooks/useAddTodo";
 
 const TodoForm = () => {
-  const queryClient = useQueryClient();
-  const addTodo = useMutation<Todo, Error, Todo>({
-    mutationFn: (todo: Todo) =>
-      axios
-        .post<Todo>("https://jsonplaceholder.typicode.com/todos", todo)
-        .then((res) => res.data),
-    onSuccess: (savedTodo, newTodo) => {
-      console.log(savedTodo);
-
-      // APPROACH : INVALIDATING A CACHE
-      //queryClient.invalidateQueries({
-      // queryKey:['todos']
-      //})
-
-      // APPROACH 2: UPDATING DATA IN THE CACHE
-      queryClient.setQueryData<Todo[]>(["todos"], (todos) => [
-        savedTodo,
-        ...(todos || []),
-      ]);
-
-      if (ref.current) ref.current.value = "";
-    },
-  });
-
   const ref = useRef<HTMLInputElement>(null);
+  const addTodo = useAddTodo(() => {
+    if (ref.current) ref.current.value = "";
+  });
 
   return (
     <>
@@ -53,9 +30,7 @@ const TodoForm = () => {
           <input ref={ref} type="text" className="form-control" />
         </div>
         <div className="col">
-          <button disabled={addTodo.isPending} className="btn btn-primary">
-            {addTodo.isPending ? "Adding..." : "Add"}
-          </button>
+          <button className="btn btn-primary">Add</button>
         </div>
       </form>
     </>
