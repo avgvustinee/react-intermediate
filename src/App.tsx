@@ -1,8 +1,14 @@
 import "./App.css";
-import PostList from "./reactQuery/PostList";
+import TodoForm from "./reactQuery/TodoForm";
+import TodoList from "./reactQuery/TodoList";
 
 function App() {
-  return <PostList />;
+  return (
+    <>
+      <TodoForm />
+      <TodoList />
+    </>
+  );
 }
 
 export default App;
