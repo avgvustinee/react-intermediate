@@ -1,12 +1,10 @@
 import "./App.css";
-import TodoForm from "./reactQuery/TodoForm";
-import TodoList from "./reactQuery/TodoList";
+import TaskList from "./stateManagement/TaskList";
 
 function App() {
   return (
     <>
-      <TodoForm />
-      <TodoList />
+      <TaskList/>
     </>
   );
 }
