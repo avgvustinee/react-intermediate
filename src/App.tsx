@@ -1,8 +1,8 @@
 import "./App.css";
 import HomePage from "./stateManagement/components/HomePage";
-import NavBar from "./stateManagement/components/NavBar";
-import AuthProvider from "./stateManagement/providers/AuthProvider";
-import TasksProvider from "./stateManagement/providers/TasksProvider";
+import NavBar from "./stateManagement/NavBar";
+import { AuthProvider } from "./stateManagement/auth";
+import { TasksProvider } from "./stateManagement/tasks";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <TasksProvider>
         <NavBar />
         <HomePage />
-      </TasksProvider> 
+      </TasksProvider>
     </AuthProvider>
   );
 }
