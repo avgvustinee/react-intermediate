@@ -7,13 +7,18 @@ import { RouterProvider } from "react-router";
 import "./index.css";
 import router from "./routing/routes.tsx";
 
-
 const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+           // Enable the relative splat path flag
+        }}
+      />
       <ReactQueryDevtools />
     </QueryClientProvider>
   </StrictMode>
