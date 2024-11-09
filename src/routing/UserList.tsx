@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const UserList = () => {
   const users = [
-    { id: 1, name: "Augustine" },
-    { id: 2, name: "Dianna" },
-    { id: 3, name: "Akira" },
+    { id: 1, name: 'Augustine' },
+    { id: 2, name: 'Dianna' },
+    { id: 3, name: 'Akira' },
   ];
   return (
     <ul className="list-group">

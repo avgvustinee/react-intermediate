@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
-import UserListPage from "./UserList";
+import UserList from "./UserList";
 
 const UsersPage = () => {
   return (
     <div className="row">
       <div className="col">
-        <UserListPage />
+        <UserList />
       </div>
       <div className="col">
         <Outlet />

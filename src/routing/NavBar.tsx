@@ -1,10 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   return (
     <nav
       className="navbar navbar-expand-lg"
-      style={{ background: "#f0f0f0", marginBottom: "1rem" }}
+      style={{ background: '#f0f0f0', marginBottom: '1rem' }}
     >
       <div className="container-fluid">
         <a className="navbar-brand" href="#">

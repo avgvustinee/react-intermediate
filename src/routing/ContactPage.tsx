@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const ContactPage = () => {
   const navigate = useNavigate();
@@ -7,8 +7,7 @@ const ContactPage = () => {
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        // Redirect the user to the home page
-        navigate("/");
+        navigate('/');
       }}
     >
       <button className="btn btn-primary">Submit</button>
